@@ -30,6 +30,7 @@ const SelectCharacter = ({ setCharacterNFT }) => {
     }
   };
 
+  console.log(gameContract);
   useEffect(() => {
     const { ethereum } = window;
 
@@ -53,22 +54,15 @@ const SelectCharacter = ({ setCharacterNFT }) => {
       try {
         console.log("Getting contract characters to mint");
 
-        /*
-         * Call contract to get all mint-able characters
-         */
+        // get all mintable characters from contract
         const charactersTxn = await gameContract.getAllDefaultCharacters();
         console.log("charactersTxn:", charactersTxn);
 
-        /*
-         * Go through all of our characters and transform the data
-         */
         const characters = charactersTxn.map((characterData) =>
           transformCharacterData(characterData)
         );
 
-        /*
-         * Set all mint-able characters in state
-         */
+        // set mintable characters in state
         setCharacters(characters);
       } catch (error) {
         console.error("Something went wrong fetching characters:", error);
@@ -81,7 +75,9 @@ const SelectCharacter = ({ setCharacterNFT }) => {
       );
 
       alert(
-        `Your NFT is all done -- see it here: https://testnets.opensea.io/assets/${gameContract}/${tokenId.toNumber()}`
+        `Your NFT is all done -- see it here: https://testnets.opensea.io/assets/${
+          gameContract.address
+        }/${tokenId.toNumber()}`
       );
 
       if (gameContract) {
@@ -101,7 +97,7 @@ const SelectCharacter = ({ setCharacterNFT }) => {
         gameContract.off("CharacterNFTMinted", onCharacterMint);
       }
     };
-  }, [gameContract]);
+  }, [gameContract, setCharacterNFT]);
 
   // Render Method
   const renderCharacters = () =>
