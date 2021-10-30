@@ -34,6 +34,7 @@
 }
 
 .cta-button {
+  margin: 20px;
   height: 45px;
   border: 0;
   width: auto;
@@ -60,12 +61,12 @@
 .connect-wallet-button {
   background-image: linear-gradient(
     to right,
-    #ff8177 0%,
-    #ff867a 0%,
-    #ff8c7f 21%,
-    #f99185 52%,
-    #cf556c 78%,
-    #b12a5b 100%
+    #ffa400 0%,
+    #ff9307 0%,
+    #ff7313 21%,
+    #ff5121 52%,
+    #ff4227 78%,
+    #ff2e2e 100%
   );
   background-size: 200% 200%;
   animation: gradient-animation 4s ease infinite;
