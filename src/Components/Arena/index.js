@@ -82,7 +82,7 @@ const Arena = ({ characterNFT, setCharacterNFT }) => {
         gameContract.off("AttackComplete", onAttackComplete);
       }
     };
-  }, [gameContract]);
+  }, [gameContract, setCharacterNFT]);
 
   return (
     <div className="arena-container">
