@@ -92,40 +92,50 @@ const Arena = ({ characterNFT, setCharacterNFT }) => {
         </div>
       )}
       {boss && (
-        <div className="boss-container">
-          <div className={`boss-content ${attackState}`}>
-            <h2>🔥 {boss.name} 🔥</h2>
-            <div className="image-content">
-              <img src={boss.imageURI} alt={`Boss ${boss.name}`} />
-              <div className="health-bar">
-                <progress value={boss.hp} max={boss.maxHp} />
-                <p>{`${boss.hp} / ${boss.maxHp} HP`}</p>
+        <>
+          <div className="boss-container">
+            <div className={`boss-content ${attackState}`}>
+              <h2>🔥 {boss.name} 🔥</h2>
+              <div className="image-content">
+                <img
+                  src={`https://cloudflare-ipfs.com/ipfs/${boss.imageURI}`}
+                  alt={`Boss ${boss.name}`}
+                />
+                <div className="health-bar">
+                  <progress value={boss.hp} max={boss.maxHp} />
+                  <p>{`${boss.hp} / ${boss.maxHp} HP`}</p>
+                </div>
               </div>
             </div>
+            <h2>The Boss</h2>
           </div>
+        </>
+      )}
+
+      {boss && (
+        <>
           <div className="attack-container">
             <button className="cta-button" onClick={runAttackAction}>
               {`💥 Attack ${boss.name}`}
             </button>
+            {attackState === "attacking" && (
+              <div className="loading-indicator">
+                <LoadingIndicator />
+                <p>Attacking ⚔️</p>
+              </div>
+            )}
           </div>
-          {attackState === "attacking" && (
-            <div className="loading-indicator">
-              <LoadingIndicator />
-              <p>Attacking ⚔️</p>
-            </div>
-          )}
-        </div>
+        </>
       )}
 
       {characterNFT && (
         <div className="players-container">
           <div className="player-container">
-            <h2>Your Character</h2>
             <div className="player">
               <div className="image-content">
                 <h2>{characterNFT.name}</h2>
                 <img
-                  src={characterNFT.imageURI}
+                  src={`https://cloudflare-ipfs.com/ipfs/${characterNFT.imageURI}`}
                   alt={`Character ${characterNFT.name}`}
                 />
                 <div className="health-bar">
@@ -133,10 +143,11 @@ const Arena = ({ characterNFT, setCharacterNFT }) => {
                   <p>{`${characterNFT.hp} / ${characterNFT.maxHp} HP`}</p>
                 </div>
               </div>
-              <div className="stats">
-                <h4>{`⚔️ Attack Damage: ${characterNFT.attackDamage}`}</h4>
-              </div>
             </div>
+          </div>
+          <h2>Your Character</h2>
+          <div className="stats">
+            <h4 className="attack-damage">{`⚔️ Attack Damage: ${characterNFT.attackDamage}`}</h4>
           </div>
         </div>
       )}

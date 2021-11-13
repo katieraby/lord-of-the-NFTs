@@ -1,6 +1,7 @@
 .arena-container {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
+  justify-content: center;
   align-items: center;
   margin: auto;
   color: white;
@@ -20,16 +21,14 @@
   border-radius: 10px;
   background-image: linear-gradient(
     to right,
-    #ff8177 0%,
-    #ff867a 0%,
-    #ff8c7f 21%,
-    #f99185 52%,
-    #cf556c 78%,
-    #b12a5b 100%
+    #00032a 0%,
+    #0d1475 21%,
+    #363fbc 52%,
+    #1a207d 78%,
+    #272c6a 100%
   );
   background-size: 600% 600%;
   animation: gradient-animation 8s ease infinite;
-  margin-bottom: 25px;
 }
 
 .boss-content h2 {
@@ -43,7 +42,7 @@
 }
 
 .boss-content .image-content img {
-  width: 350px;
+  width: 300px;
   height: 300px;
   border-radius: 10px;
   object-fit: cover;
@@ -83,11 +82,8 @@
   bottom: -10px;
 }
 
-.arena-container .players-container {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: space-around;
+.players-container {
+  align-self: flex-start;
 }
 
 .players-container .player {
@@ -96,11 +92,11 @@
   max-height: 80%;
   padding: 10px;
   border-radius: 10px;
-  background-color: gray;
+  background-color: #9e4f93;
 }
 
 .player .image-content img {
-  width: 250px;
+  width: 300px;
   height: 300px;
   border-radius: 10px;
   object-fit: cover;
@@ -148,10 +144,15 @@
   justify-content: center;
 }
 
+.attack-damage {
+  margin: 10px 0px 5px 0px;
+}
+
 .attack-container button {
-  height: 60px;
+  height: 70px;
+  width: 70%;
   font-size: 18px;
-  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-image: linear-gradient(135deg, #11132d 0%, #17181f 100%);
   background-size: 200% 200%;
   animation: gradient-animation 4s ease infinite;
 }
@@ -240,14 +241,14 @@
   white-space: nowrap;
 }
 
-.boss-container .loading-indicator {
+.loading-indicator {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 25px;
 }
 
-.boss-container .loading-indicator p {
+.loading-indicator p {
   font-weight: bold;
   font-size: 28px;
 }
