@@ -9,8 +9,7 @@ import Arena from "./Components/Arena";
 import LoadingIndicator from "./Components/LoadingIndicator";
 
 // Constants
-const TWITTER_HANDLE = "KatieARaby";
-const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
+const TWITTER_LINK = `https://twitter.com/katiearaby`;
 
 const App = () => {
   const [currentAccount, setCurrentAccount] = useState(null);
@@ -53,7 +52,7 @@ const App = () => {
       return (
         <div className="connect-wallet-container">
           <img
-            src="https://24.media.tumblr.com/96698d1596cfa7c4a091aea532d93fce/tumblr_mmc893F8jr1s2b2mgo3_500.gif"
+            src="https://cloudflare-ipfs.com/ipfs/QmfM9jvP8Hs7WXoBvCfjhfLLUC2aXQi3PAp6ZXTwWgXi4W"
             alt="Lord of the Rings GIF"
           />
           <button
@@ -131,8 +130,8 @@ const App = () => {
         <div className="header-container">
           <p className="header gradient-text">Lord of the NFTs</p>
           <p className="sub-text">One NFT to rule them all!</p>
-          {renderContent()}
         </div>
+        {renderContent()}
         <div className="footer-container">
           <img alt="Twitter Logo" className="twitter-logo" src={twitterLogo} />
           <a
@@ -140,7 +139,9 @@ const App = () => {
             href={TWITTER_LINK}
             target="_blank"
             rel="noreferrer"
-          >{`built by @${TWITTER_HANDLE} with the help of buildspace!`}</a>
+          >
+            built by Katie with the help of buildspace!
+          </a>
         </div>
       </div>
     </div>

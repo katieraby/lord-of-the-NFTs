@@ -104,7 +104,10 @@ const SelectCharacter = ({ setCharacterNFT }) => {
         <div className="name-container">
           <p>{character.name}</p>
         </div>
-        <img src={character.imageURI} alt={character.name} />
+        <img
+          src={`https://cloudflare-ipfs.com/ipfs/${character.imageURI}`}
+          alt={character.name}
+        />
         <button
           type="button"
           className="character-mint-button"

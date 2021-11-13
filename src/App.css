@@ -1,13 +1,15 @@
 .App {
   height: 100vh;
-  background-color: #0d1116;
+  background-image: url("https://cloudflare-ipfs.com/ipfs/QmYm4BUUuRcCRX3QW3xyHoYyo9WkJESddF2Soq1M4JJkJj");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   overflow: scroll;
   text-align: center;
 }
 
 .container {
   height: 100%;
-  background-color: #0d1116;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -35,14 +37,14 @@
 
 .cta-button {
   margin: 20px;
-  height: 45px;
+  height: 55px;
   border: 0;
   width: auto;
   padding-left: 40px;
   padding-right: 40px;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   color: white;
 }
@@ -61,14 +63,14 @@
 .connect-wallet-button {
   background-image: linear-gradient(
     to right,
-    #ffa400 0%,
-    #ff9307 0%,
-    #ff7313 21%,
-    #ff5121 52%,
-    #ff4227 78%,
-    #ff2e2e 100%
+    #000881 0%,
+    #1d26a7 21%,
+    #363fbc 52%,
+    #565fd6 78%,
+    #9ca3ff 100%
   );
   background-size: 200% 200%;
+  border: 3px solid black;
   animation: gradient-animation 4s ease infinite;
 }
 
